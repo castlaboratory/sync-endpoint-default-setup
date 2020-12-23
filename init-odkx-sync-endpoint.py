@@ -144,14 +144,14 @@ def parse_env_file(filepath):
 
 
 def run_docker_builds():
-    os.system("docker build --pull -t odk/sync-web-ui https://github.com/odk-x/sync-endpoint-web-ui.git")
+    os.system("docker build --pull -t odk/sync-web-ui https://github.com/castlaboratory/sync-endpoint-web-ui.git")
     os.system("docker build --pull -t odk/db-bootstrap db-bootstrap")
     os.system("docker build --pull -t odk/openldap openldap")
     os.system("docker build --pull -t odk/phpldapadmin phpldapadmin")
 
 
 def run_sync_endpoint_build():
-    os.system("git clone https://github.com/odk-x/sync-endpoint ; \
+    os.system("git clone https://github.com/castlaboratory/sync-endpoint.git ; \
                cd sync-endpoint ; \
                mvn clean install -DskipTests")
 
