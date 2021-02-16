@@ -28,6 +28,7 @@ services:
       replicas: 1
     networks:
       - db-network
+      - bridge
     volumes:
       - db-vol:/var/lib/postgresql/data
     env_file:
@@ -105,6 +106,8 @@ networks:
     driver_opts:
       encrypted: ""
     internal: true
+  bridge:
+    external: true
 
 volumes:
   db-vol: # preserve db
